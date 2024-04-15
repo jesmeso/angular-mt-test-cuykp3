@@ -1,0 +1,26 @@
+<button (click)="getExchangeList()">
+    Refresh
+</button>
+
+<label>Date: {{currentDate | date:'dd-MM-yyyy'}}</label>
+
+<table>
+    <tr>
+        <th>Currency</th>
+        <th>Value</th>
+    </tr>
+    <tr *ngFor="let exchange of exchangeList">
+        <td>{{exchange.currency}}</td>
+        <td>{{exchange.value}}</td>
+    </tr>
+</table>
+<div class="pagination">
+    <button (click)="pagination('prev')">
+        <i>prev</i>
+    </button>
+    <label>{{currentPage}}</label>
+    <button (click)="pagination('next')">
+        <i>next</i>
+    </button>
+
+</div>
